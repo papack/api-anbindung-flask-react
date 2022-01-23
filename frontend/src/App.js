@@ -25,6 +25,9 @@ function App() {
         style={{
           width: "500px",
           height: "500px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           backgroundColor: isLoading ? "gray" : "green",
         }}
         onDrag={preventDefaultBrowserBehavior}
@@ -42,7 +45,9 @@ function App() {
           //handle upload
           handleImageUpload(file);
         }}
-      />
+      >
+        Drop file here
+      </div>
 
       {/* Show Error, if we have any */}
       {errorMassage && (
