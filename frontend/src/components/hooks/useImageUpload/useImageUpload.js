@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-export const useImageUpload = () => {
+export const useImageUpload = ({ apiURL }) => {
   const [imagePaths, setImagePaths] = useState([]);
   const [price, setPrice] = useState(0);
   const [vintedURL, setVintedURL] = useState("");
@@ -23,15 +23,11 @@ export const useImageUpload = () => {
     try {
       const {
         data: { imagePaths, price, vintedURL, vintedUsername },
-      } = await axios.post(
-        "http://localhost:5000/api/v1/process-image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      } = await axios.post(apiURL, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       //set the data to state
       setPrice(price);

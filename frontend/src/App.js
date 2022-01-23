@@ -16,7 +16,7 @@ function App() {
     vindetUsername,
     isLoading,
     errorMassage,
-  } = useImageUpload();
+  } = useImageUpload({ apiURL: "http://localhost:5000/api/v1/process-image" });
 
   return (
     <>
