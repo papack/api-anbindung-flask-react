@@ -49,7 +49,7 @@ def index():
     for i in range(5):
         urls.append('http://'+host+":"+port+"/static/"+uuids[i]+'.jpg')
 
-    #build response
+    #build response #TODO Replace with real data
     response = jsonify({ "imagePaths": urls, "price": "100 €",  "vintedURL": "https://www.vinted.com/test/bla", "vintedUsername" : "mmustermann" })
 
     #disable cors
